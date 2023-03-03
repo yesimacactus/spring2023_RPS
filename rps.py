@@ -118,6 +118,7 @@ while running:
     clock.tick(FPS)
     # pygame get every event, for loop goes thru a list
     for event in pg.event.get():
+        cpu_randchoice()
         # listening for when quit
         ########   input ##########
         # keyboard, mouse, joystick, controller, vr headset,
@@ -166,7 +167,6 @@ while running:
                 print("u did not click on an image")
                 user = "error" 
                 ''' runnin the functions '''
-            cpu_randchoice()
             sleep(0.5)
             print("the computer chose", str(cpu))
             sleep(1)
@@ -208,17 +208,34 @@ while running:
         screen.blit(carrot_image, carrot_image_rect)
         screen.blit(gun_image, gun_image_rect)
         screen.blit(bunny_image, bunny_image_rect)
-
     elif winlose == "win":
         screen.blit(Bcgwon_image, Bcgwon_image_rect)
         screen.blit(Bcgmin_image, Bcgmin_image_rect)
+        if cpu == choices1[0]:
+            screen.blit(carrotcpu_image,carrotcpu_image_rect)
+        elif cpu == choices1[1]:
+            screen.blit(guncpu_image,guncpu_image_rect)
+        elif cpu == choices1[2]:
+            screen.blit(bunnycpu_image,bunnycpu_image_rect)
     elif winlose == "lose":
         screen.blit(Bcglost_image, Bcglost_image_rect)
+        if cpu == choices1[0]:
+            screen.blit(carrotcpu_image,carrotcpu_image_rect)
+        elif cpu == choices1[1]:
+            screen.blit(guncpu_image,guncpu_image_rect)
+        elif cpu == choices1[2]:
+            screen.blit(bunnycpu_image,bunnycpu_image_rect)
     elif winlose == "tie":
         screen.blit(Bcgcat_image, Bcgcat_image_rect)
+        if cpu == choices1[0]:
+            screen.blit(carrotcpu_image,carrotcpu_image_rect)
+        elif cpu == choices1[1]:
+            screen.blit(guncpu_image,guncpu_image_rect)
+        elif cpu == choices1[2]:
+            screen.blit(bunnycpu_image,bunnycpu_image_rect)
     #updates screen
     pg.display.flip()
-    sleep(1)
+    sleep(2)
     winlose = "winlose"
 
     
