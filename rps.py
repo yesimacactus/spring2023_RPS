@@ -38,11 +38,20 @@ carrot_image = pg.image.load(os.path.join(game_folder, 'carrot.png')).convert()
 # gets rectangle of the image, stores where the pixels are. how many there are, and allows us to change those things
 carrot_image_rect = carrot_image.get_rect()
 
+carrotcpu_image = pg.image.load(os.path.join(game_folder, 'carrotcpu.png')).convert()
+carrotcpu_image_rect = carrotcpu_image.get_rect()
+
 gun_image = pg.image.load(os.path.join(game_folder, 'gun.png')).convert()
 gun_image_rect = gun_image.get_rect()
 
+guncpu_image = pg.image.load(os.path.join(game_folder, 'guncpu.png')).convert()
+guncpu_image_rect = guncpu_image.get_rect()
+
 bunny_image = pg.image.load(os.path.join(game_folder, 'bunny.png')).convert()
 bunny_image_rect = bunny_image.get_rect()
+
+bunnycpu_image = pg.image.load(os.path.join(game_folder, 'bunnycpu.png')).convert()
+bunnycpu_image_rect = bunnycpu_image.get_rect()
 
 BCG_image = pg.image.load(os.path.join(game_folder, 'BCG.png')).convert()
 BCG_image_rect = BCG_image.get_rect()
@@ -199,19 +208,18 @@ while running:
         screen.blit(carrot_image, carrot_image_rect)
         screen.blit(gun_image, gun_image_rect)
         screen.blit(bunny_image, bunny_image_rect)
+
     elif winlose == "win":
         screen.blit(Bcgwon_image, Bcgwon_image_rect)
         screen.blit(Bcgmin_image, Bcgmin_image_rect)
-        sleep(1)
-        
     elif winlose == "lose":
         screen.blit(Bcglost_image, Bcglost_image_rect)
-        sleep(1)
     elif winlose == "tie":
         screen.blit(Bcgcat_image, Bcgcat_image_rect)
-        sleep(1)
-    
+    #updates screen
     pg.display.flip()
+    sleep(1)
+    winlose = "winlose"
 
     
 
